@@ -1,11 +1,13 @@
 <section
-  class="flex flex-col h-[100%] pt-24 lg:pt-2 w-full items-center"
+  class="flex flex-col h-[100vh] pt-24 lg:pt-2 w-full items-center"
   [class.bg-black]="themeService.isDarkMode"
 >
   <h1 class="text-4xl" [class.text-gray-50]="themeService.isDarkMode">
     Twitter...kinda {{ ":)" }}
   </h1>
-  <img src="../../assets/creativeLogo.png" alt="logo" />
+  <div class="lg:w-1/3 ">
+    <img src="../../assets/creativeLogo.png" alt="logo" class="w-full" />
+  </div>
   <label class="inline-flex items-center cursor-pointer">
     <input
       type="checkbox"
