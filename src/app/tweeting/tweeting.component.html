@@ -1,0 +1,11 @@
+
+<mat-dialog-actions class="flex !justify-between w-full">
+  <button class="!text-primary" mat-button mat-dialog-close>Cancel</button>
+  <button class="!text-white bg-primary py-1 px-2 rounded-2xl" [mat-dialog-close]="true" cdkFocusInitial>
+    Tweet
+  </button>
+</mat-dialog-actions>
+<mat-dialog-content>
+  <img src="../../assets/Round.png" alt="profile picture" >
+  <textarea class="w-full h-full focus:outline-none" placeholder="What's happening?"></textarea>
+</mat-dialog-content>

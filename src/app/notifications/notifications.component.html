@@ -1,0 +1,95 @@
+<section
+  class="h-full"
+  [class.!bg-black]="themeService.isDarkMode"
+  [class.!text-white]="themeService.isDarkMode"
+>
+  <app-header headerTitle="<h1 class='text-xl'>Notifications</h1>"></app-header>
+  <div class="h-[85vh] pb-8 overflow-scroll">
+    <nav
+      class="w-full text-secondary text-2xl font-medium grid grid-cols-2 sticky top-0 bg-white"
+      [class.!bg-black]="themeService.isDarkMode"
+      [class.!text-white]="themeService.isDarkMode"
+    >
+      <button
+        class="text-center border-primary"
+        [class.border-b-4]="!mentionsActive"
+        (click)="onViewMentions(false)"
+      >
+        All
+      </button>
+      <button
+        class="text-center border-primary"
+        [class.border-b-4]="mentionsActive"
+        (click)="onViewMentions(true)"
+      >
+        Mentions
+      </button>
+    </nav>
+    <div class="w-5/6 mx-auto text-secondary">
+      <h1
+        class="text-3xl font-bold text-black pl-2 mt-10"
+        [class.!bg-black]="themeService.isDarkMode"
+        [class.!text-white]="themeService.isDarkMode"
+      >
+        Find more accounts to follow
+      </h1>
+      <br />
+      <p class="text-secondary text-sm pl-2 mt-4">
+        Reposts, recommendations, and more will pop up here as you follow more
+        accounts. Get started by finding some you're interested in.
+      </p>
+
+      <!-- <div class="mt-4">
+      <img src="../../assets/Round2.png" alt="display photo" />
+      <p>In case you missed Saad Drusteer’s Tweet.</p>
+      <p>
+        🔥 Are you using WordPress and migrating to the JAMstack? I wrote up a
+        case study about how Smashing Magazine moved to JAMstack and saw great
+        performance improvements and better security.
+        smashingdrusteer.com/2020/01/migrat...
+      </p>
+    </div>
+    <div class="mt-4">
+      <img src="../../assets/Round2.png" alt="display photo" />
+      <p>In case you missed Saad Drusteer’s Tweet.</p>
+      <p>
+        🔥 Are you using WordPress and migrating to the JAMstack? I wrote up a
+        case study about how Smashing Magazine moved to JAMstack and saw great
+        performance improvements and better security.
+        smashingdrusteer.com/2020/01/migrat...
+      </p>
+    </div>
+  
+    <div class="mt-4">
+      <img src="../../assets/Round2.png" alt="display photo" />
+      <p>In case you missed Saad Drusteer’s Tweet.</p>
+      <p>
+        🔥 Are you using WordPress and migrating to the JAMstack? I wrote up a
+        case study about how Smashing Magazine moved to JAMstack and saw great
+        performance improvements and better security.
+        smashingdrusteer.com/2020/01/migrat...
+      </p>
+    </div>
+    <div class="mt-4">
+      <img src="../../assets/Round2.png" alt="display photo" />
+      <p>In case you missed Saad Drusteer’s Tweet.</p>
+      <p>
+        🔥 Are you using WordPress and migrating to the JAMstack? I wrote up a
+        case study about how Smashing Magazine moved to JAMstack and saw great
+        performance improvements and better security.
+        smashingdrusteer.com/2020/01/migrat...
+      </p>
+    </div>
+    <div class="mt-4">
+      <img src="../../assets/Round2.png" alt="display photo" />
+      <p>In case you missed Saad Drusteer’s Tweet.</p>
+      <p>
+        🔥 Are you using WordPress and migrating to the JAMstack? I wrote up a
+        case study about how Smashing Magazine moved to JAMstack and saw great
+        performance improvements and better security.
+        smashingdrusteer.com/2020/01/migrat...
+      </p>
+    </div> -->
+    </div>
+  </div>
+</section>

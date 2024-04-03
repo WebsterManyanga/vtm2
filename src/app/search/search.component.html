@@ -1,0 +1,32 @@
+<section
+  class="h-full"
+  [class.!bg-black]="themeService.isDarkMode"
+  [class.!text-white]="themeService.isDarkMode"
+>
+  <app-header headerTitle="<h1 class='text-xl'>Search</h1>"></app-header>
+  <div
+    class="bg-tertiary w-full h-[85vh] pb-8 overflow-scroll"
+    [class.!bg-black]="themeService.isDarkMode"
+    [class.!text-white]="themeService.isDarkMode"
+  >
+    <div
+      class="border-b border-black sticky top-0 pb-6 bg-white"
+      [class.!bg-black]="themeService.isDarkMode"
+      [class.!text-white]="themeService.isDarkMode"
+    >
+      <div
+        class="flex w-5/6 text-secondary text-xl mt-0 mx-auto gap-2 items-baseline"
+      >
+        <input
+          type="search"
+          placeholder="Search Twitter"
+          class="w-full mt-4 bg-tertiary p-2 focus:outline-none rounded-xl"
+          [class.!bg-gray-800]="themeService.isDarkMode"
+          [class.!text-white]="themeService.isDarkMode"
+          
+        />
+        <button class="text-primary">Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>

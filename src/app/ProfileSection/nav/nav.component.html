@@ -1,0 +1,61 @@
+<mat-tab-group
+  animationDuration="0ms"
+  color="primary"
+  (selectedTabChange)="changeTab()"
+>
+  <mat-tab label="Tweets" >
+    <div
+      class="pl-8 relative flex flex-col gap-4 h-[85%] pb-8 overflow-scroll"
+    >
+      <ul *ngFor="let tweet of tweets">
+        <li>
+          <app-tweet [tweet]="tweet"></app-tweet>
+        </li>
+      </ul>
+    </div>
+  </mat-tab>
+  <mat-tab label="Replies">
+    <h1
+      class="text-3xl font-bold text-black pl-10 mt-10"
+      [class.!text-white]="themeService.isDarkMode"
+    >
+      No replies yet!
+    </h1>
+    <p class="text-secondary text-sm pl-10 mt-4">Try posting more.</p>
+  </mat-tab>
+  <mat-tab label="Media">
+    <h1
+      class="text-3xl font-bold text-black pl-10 mt-10"
+      [class.!text-white]="themeService.isDarkMode"
+    >
+      Lights, camera ... <br />
+      attachments!
+    </h1>
+    <p class="text-secondary text-sm pl-10 mt-4">
+      Your photo and video posts will show up here.
+    </p>
+  </mat-tab>
+  <mat-tab label="Likes">
+    <div *ngIf="likedTweets.length === 0">
+      <h1
+        class="text-3xl font-bold text-black pl-10 mt-10"
+        [class.!text-white]="themeService.isDarkMode"
+      >
+        Like some posts
+      </h1>
+      <p class="text-secondary text-sm pl-10 mt-4">
+        Tap the heart on any post to show it some love. <br />
+        When you do, it'll show up here
+      </p>
+    </div>
+    <div
+      class="pl-8 relative flex flex-col gap-4 h-[85%] pb-8 overflow-scroll"
+    >
+      <ul *ngFor="let tweet of likedTweets">
+        <li>
+          <app-tweet [tweet]="tweet"></app-tweet>
+        </li>
+      </ul>
+    </div>
+  </mat-tab>
+</mat-tab-group>

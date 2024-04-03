@@ -1,0 +1,100 @@
+<section
+  class="bg-tertiary h-full w-full relative"
+  [class.!bg-black]="themeService.isDarkMode"
+  [class.!text-white]="themeService.isDarkMode"
+>
+  <div
+    class="bg-white relative"
+    [class.!bg-black]="themeService.isDarkMode"
+    [class.!text-white]="themeService.isDarkMode"
+  >
+    <a routerLink="../home" class="text-3xl absolute left-4 top-5"
+      ><mat-icon>arrow_back</mat-icon></a
+    >
+    <h1 class="text-xl font-bold text-center py-5">Settings</h1>
+
+  
+  </div>
+  <h1 class="text-secondary font-semibold text-2xl pl-2 pt-8 mb-8">Privacy</h1>
+  <ul
+    class="px-8 bg-white py-3"
+    [class.!bg-black]="themeService.isDarkMode"
+    [class.!text-white]="themeService.isDarkMode"
+  >
+  <li class="pb-4 w-full">
+    <label class=" w-36 flex items-center cursor-pointer mx-auto">
+      <input
+        type="checkbox"
+        [checked]="themeService.isDarkMode"
+        value=""
+        class="sr-only peer"
+        (click)="themeService.toggleTheme()"
+      />
+      <div
+        class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-primary dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+      ></div>
+      <span
+        class="ms-3 text-sm font-medium text-black"
+        [class.text-gray-50]="themeService.isDarkMode"
+        >Dark Mode</span
+      >
+    </label>
+  </li>
+
+    <li class="pb-4">
+      <div class="flex justify-between">
+        <h2
+          class="text-black font-semibold text-lg pb-2"
+          [class.!bg-black]="themeService.isDarkMode"
+          [class.!text-white]="themeService.isDarkMode"
+        >
+          Receive mesages from anyone
+        </h2>
+        <section>
+          <mat-slide-toggle color="primary" [checked]="" hideIcon="true">
+          </mat-slide-toggle>
+        </section>
+      </div>
+      <p>
+        You will be able to receive Direct Message requests from anyone on
+        Twitter, even if you don’t follow them.
+      </p>
+    </li>
+
+    <li class="pb-4">
+      <div class="flex justify-between">
+        <h2 class="text-black font-semibold text-lg pb-2">Quality filter</h2>
+        <section>
+          <mat-slide-toggle color="primary" hideIcon="true"> </mat-slide-toggle>
+        </section>
+      </div>
+      <p>
+        Filters lower-quality messages from your Direct Message requests. Learn
+        more
+      </p>
+    </li>
+
+    <li class="pb-4">
+      <div class="flex justify-between">
+        <h2
+          class="text-black font-semibold text-lg pb-2"
+          [class.!bg-black]="themeService.isDarkMode"
+          [class.!text-white]="themeService.isDarkMode"
+        >
+          Show read receipts
+        </h2>
+        <section>
+          <mat-slide-toggle color="primary" [checked]="" hideIcon="true">
+          </mat-slide-toggle>
+        </section>
+      </div>
+      <p>
+        When someone sends you a message, peopla in the conversation will know
+        when you’ve seen it. If you turn off this setting, you won’t be able to
+        see read receipts from others. Learn more
+      </p>
+    </li>
+  </ul>
+
+  
+</section>

@@ -1,0 +1,38 @@
+<div
+  [class.!bg-black]="themeService.isDarkMode"
+  [class.!text-white]="themeService.isDarkMode"
+  class="h-full flex justify-start flex-col"
+>
+  <mat-tab-group class="!h-full nav bg-white " animationDuration="0ms" headerPosition="below"   [class.!bg-black]="themeService.isDarkMode"
+  [class.!bg-black]="themeService.isDarkMode"
+  >
+    <mat-tab>
+      <ng-template mat-tab-label
+        ><span class="text-3xl py-6"><mat-icon>home</mat-icon></span>
+      </ng-template>
+      <app-tweets-page></app-tweets-page>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label
+        ><span class="text-3xl py-6"
+          ><mat-icon>search</mat-icon></span
+        ></ng-template
+      ><app-search></app-search
+    ></mat-tab>
+    <mat-tab
+      ><ng-template mat-tab-label>
+        <span class="text-3xl py-6"
+          ><mat-icon>notifications</mat-icon></span
+        > </ng-template
+      ><app-notifications></app-notifications
+    ></mat-tab>
+
+    <mat-tab
+      ><ng-template mat-tab-label>
+        <span class="text-3xl py-6"
+          ><mat-icon>mail_outline</mat-icon></span
+        ></ng-template
+      ><app-messages></app-messages
+    ></mat-tab>
+  </mat-tab-group>
+</div>

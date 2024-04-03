@@ -1,0 +1,122 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+$my-custom-primary: (
+  50: #1da1f2,
+  100: #1da1f2,
+  200: #1da1f2,
+  300: #1da1f2,
+  400: #1da1f2,
+  500: #1da1f2,
+  600: #1da1f2,
+  700: #1da1f2,
+  800: #1da1f2,
+  900: #1da1f2,
+
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Angular-App-primary: mat.define-palette($my-custom-primary);
+$Angular-App-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Angular-App-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Angular-App-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Angular-App-primary,
+      accent: $Angular-App-accent,
+      warn: $Angular-App-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Angular-App-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
+  // overflow: clip;
+}
+/*
+@media screen and (min-width: 1000px) {
+  body {
+    width: 300px;
+    height: 640px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    padding-top: 2%;
+    // background-image: url("./assets/Apple-iPhone-15-Frame-PNG.png");
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: 460px;
+  }
+
+  body::before {
+    top: 0;
+    left: -15px;
+    content: "";
+    display: block;
+    width: 330px;
+    height: 690px;
+    position: absolute;
+    background-image: url("../src/assets/Apple-iPhone-15-Frame-PNG.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 330px;
+    z-index: -10;
+  }
+}*/
+
+mat-icon {
+  font-size: inherit !important;
+  width: min-content !important;
+  height: min-content !important;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

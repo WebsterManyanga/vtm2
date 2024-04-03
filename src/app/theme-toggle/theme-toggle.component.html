@@ -1,0 +1,33 @@
+<section
+  class="flex flex-col h-[100%] pt-24 lg:pt-2 w-full items-center"
+  [class.bg-black]="themeService.isDarkMode"
+>
+  <h1 class="text-4xl" [class.text-gray-50]="themeService.isDarkMode">
+    Twitter...kinda {{ ":)" }}
+  </h1>
+  <img src="../../assets/creativeLogo.png" alt="logo" />
+  <label class="inline-flex items-center cursor-pointer">
+    <input
+      type="checkbox"
+      [checked]="themeService.isDarkMode"
+      value=""
+      class="sr-only peer"
+      (click)="themeService.toggleTheme()"
+    />
+    <div
+      class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-primary dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+    ></div>
+    <span
+      class="ms-3 text-sm font-medium text-black"
+      [class.text-gray-50]="themeService.isDarkMode"
+      >Dark Mode</span
+    >
+  </label>
+
+  <a
+    routerLink="/home"
+    type="button"
+    class="mt-8 text-white bg-gradient-to-r bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+    >Start
+  </a>
+</section>

@@ -1,0 +1,40 @@
+<section
+  [class.bg-black]="themeService.isDarkMode"
+  [class.text-white]="themeService.isDarkMode"
+>
+  <header class="flex w-full justify-between items-center px-8 mt-2 text-lg">
+    <a
+      routerLink="../home"
+      class="text-center text-2xl flex justify-center items-center"
+      ><mat-icon>arrow_back</mat-icon></a
+    >
+    <h1>Bookmarks</h1>
+
+    <div>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span class="text-sm">Clear all Bookmarks</span>
+        </button>
+      </mat-menu>
+    </div>
+  </header>
+  <div class="mt-10 mx-auto w-5/6">
+    <h1
+      class="text-black text-2xl font-bold"
+      [class.text-white]="themeService.isDarkMode"
+    >
+      Save posts for later
+    </h1>
+    <p class="text-gray-300 mt-4">
+      Don't let the good ones fly away! Bookmark posts to easily find them again
+      in the future.
+    </p>
+  </div>
+</section>

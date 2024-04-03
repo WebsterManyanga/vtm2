@@ -1,0 +1,14 @@
+<section
+  class="!h-full"
+  [class.bg-black]="themeService.isDarkMode"
+  [class.text-white]="themeService.isDarkMode"
+>
+  <app-header></app-header>
+  <div class="pl-8 relative flex flex-col h-[90%] gap-4 pb-8 overflow-scroll">
+    <ul *ngFor="let tweet of tweets">
+      <li>
+        <app-tweet [tweet]="tweet"></app-tweet>
+      </li>
+    </ul>
+  </div>
+</section>

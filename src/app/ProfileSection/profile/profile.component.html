@@ -1,0 +1,62 @@
+<section
+  class="h-full relative overflow-hidden"
+  [class.!bg-black]="themeService.isDarkMode"
+  [class.!text-white]="themeService.isDarkMode"
+>
+  <div
+    class="absolute top-4 left-4 rounded-full w-8 h-8 bg-gray-600 bg-opacity-60 text-white flex justify-center items-center text-xl z-10"
+    [class.!bg-black]="themeService.isDarkMode"
+    [class.!text-white]="themeService.isDarkMode"
+  >
+    <a routerLink="../home" class="text-center flex justify-center items-center"
+      ><mat-icon>arrow_back</mat-icon></a
+    >
+  </div>
+  <header>
+    <div class="relative">
+      <div class="w-full h-44 overflow-clip flex justify-center items-center  bg-blue-300">
+        <img [src]="user.headerPhoto" alt="heading bar" class="w-full h-auto" />
+      </div>
+      <div
+        class="w-20 h-20 border-2 border-white rounded-full absolute -bottom-10 left-4 overflow-clip"
+      >
+        <img [src]="user.photo" alt="display photo" />
+      </div>
+    </div>
+    <div class="w-full flex justify-end pr-2">
+      <button
+        class="text-primary border-2 border-primary rounded-3xl px-3 py-1 mt-3 opacity-0"
+      >
+        Edit profile
+      </button>
+    </div>
+    <div class="pt-1 pl-4">
+      <h1 class="font-bold text-2xl">{{ user.name }}</h1>
+      <h2 class="text-secondary">&#64;{{ user.username }}</h2>
+      <p class="w-3/4 pt-2 text-lg">
+        {{ user.bio }}
+      </p>
+      <div class="mt-2 flex gap-4">
+        <a class="text-secondary"
+          ><mat-icon>calendar_month</mat-icon>Joined {{ user.created }}</a
+        >
+      </div>
+      <div class="mt-2 flex gap-4">
+        <span
+          class="font-bold text-black"
+          [class.!text-white]="themeService.isDarkMode"
+          >{{ user.following.length }}
+          <span class="text-secondary font-normal">Following</span></span
+        >
+        <span
+          class="font-bold text-black"
+          [class.!text-white]="themeService.isDarkMode"
+          >{{ user.followers.length }}
+          <span class="text-secondary font-normal">Followers</span></span
+        >
+      </div>
+    </div>
+  </header>
+
+  <app-nav></app-nav>
+</section>
